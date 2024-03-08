@@ -1,14 +1,10 @@
 import numpy as np
 import nnfs
-import os
-import cv2
-import pickle
-import copy
 from ModelClasses import *
 
 nnfs.init()
 
-X, y, X_test, y_test = create_data_mnist('../fashion_mnist_images')
+X, y, X_test, y_test = create_data_mnist('../PokemonData')
 # X = np.load('X.npy')
 # y = np.load('y.npy')
 # X_test = np.load('X_test.npy')

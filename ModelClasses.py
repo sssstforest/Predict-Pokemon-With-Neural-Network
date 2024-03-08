@@ -7,7 +7,6 @@ import copy
 
 nnfs.init()
 
-
 # Dense layer
 class Layer_Dense:
 
