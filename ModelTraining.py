@@ -4,7 +4,7 @@ from ModelClasses import *
 
 nnfs.init()
 
-X, y, X_test, y_test = create_data_mnist('../PokemonData')
+X, y= create_data_mnist('PokemonData')
 # X = np.load('X.npy')
 # y = np.load('y.npy')
 # X_test = np.load('X_test.npy')
@@ -18,8 +18,8 @@ y = y[keys]
 
 # Scale and reshape samples
 X = (X.reshape(X.shape[0], -1).astype(np.float32) - 127.5) / 127.5
-X_test = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) -
-             127.5) / 127.5
+# X_test = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) -
+            #  127.5) / 127.5
 
 # Instantiate the model
 model = Model()
@@ -44,7 +44,7 @@ model.set(
 model.finalize()
 
 # Train the model
-model.train(X, y, validation_data=(X_test, y_test),
-            epochs=10, batch_size=128, print_every=100)
+# model.train(X, y, validation_data=(X_test, y_test),
+#             epochs=10, batch_size=128, print_every=100)
 
 model.save('fashion_mnist1.model')
