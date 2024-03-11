@@ -1213,7 +1213,8 @@ def load_mnist_dataset(path):
             y.append(label)
 
     # Convert the data to proper numpy arrays and return
-    return np.array(X), np.array(y).astype('uint8')
+    # return np.array(X), np.array(y).astype('uint8')
+    return X, y
 
 
 # MNIST dataset (train + test)
