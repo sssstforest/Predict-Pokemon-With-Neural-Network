@@ -4,6 +4,8 @@ import os
 import cv2
 import pickle
 import copy
+import random
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 nnfs.init()
 
@@ -1225,6 +1227,26 @@ def create_data_mnist(path):
 
     # And return all the data
     return X, y
+
+def input_target_split(train_dir,labels):
+    dataset = []
+    count = 0
+    for label in labels:
+        folder = os.path.join(train_dir,label)
+        for image in os.listdir(folder):
+            try:
+                img=load_img(os.path.join(folder,image), target_size=(128,128))
+                img=img_to_array(img)
+                img=img/255.0
+                dataset.append((img,count))
+            except:
+                pass
+        print(f'\rCompleted: {label}',end='')
+        count+=1
+    random.shuffle(dataset)
+    X, y = zip(*dataset)
+    
+    return np.array(X),np.array(y)
 
 # Label index to label name relation
 fashion_mnist_labels = {
