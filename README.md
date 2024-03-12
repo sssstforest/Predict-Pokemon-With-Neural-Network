@@ -1,4 +1,4 @@
-# Predict Pokemon With Simple Feedforward Neural Network
+# Pokemon-Image-Predictor
 This project uses **Simple Feedforward Neural Network** to Predict **Pokemon** with images.
 
 ## Prediction Result
