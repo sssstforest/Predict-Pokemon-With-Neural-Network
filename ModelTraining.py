@@ -2,6 +2,7 @@ import numpy as np
 import nnfs
 from ModelClasses import *
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 
 nnfs.init()
 
@@ -17,13 +18,11 @@ X_test_reshaped = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) - 127.
 model = Model()
 
 # Add layers
-model.add(Layer_Dense(X_train_reshaped.shape[1], 256))
+model.add(Layer_Dense(X.shape[1], 128))
 model.add(Activation_ReLU())
-model.add(Layer_Dense(256, 256))
+model.add(Layer_Dense(128, 128))
 model.add(Activation_ReLU())
-model.add(Layer_Dense(256, 256))
-model.add(Activation_ReLU())
-model.add(Layer_Dense(256, 150))
+model.add(Layer_Dense(128, 10))
 model.add(Activation_Softmax())
 
 # Set loss, optimizer and accuracy objects
