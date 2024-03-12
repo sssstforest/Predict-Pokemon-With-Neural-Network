@@ -1235,12 +1235,12 @@ def input_target_split(train_dir,labels):
         folder = os.path.join(train_dir,label)
         for image in os.listdir(folder):
             try:
-                # img=load_img(os.path.join(folder,image), target_size=(128,128))
-                # img=img_to_array(img)
-                # img=img/255.0
-                img = cv2.imread(
-                        os.path.join(folder, image),
-                        cv2.IMREAD_UNCHANGED)
+                img=load_img(os.path.join(folder,image), target_size=(128,128))
+                img=img_to_array(img)
+                img=img/255.0
+                # img = cv2.imread(
+                #         os.path.join(folder, image),
+                #         cv2.IMREAD_UNCHANGED)
                 img=img/255.0
                 dataset.append((img,count))
             except:
@@ -1251,17 +1251,3 @@ def input_target_split(train_dir,labels):
     X, y = zip(*dataset)
     
     return np.array(X),np.array(y)
-
-# Label index to label name relation
-fashion_mnist_labels = {
-    0: 'T-shirt/top',
-    1: 'Trouser',
-    2: 'Pullover',
-    3: 'Dress',
-    4: 'Coat',
-    5: 'Sandal',
-    6: 'Shirt',
-    7: 'Sneaker',
-    8: 'Bag',
-    9: 'Ankle boot'
-}
