@@ -4,6 +4,7 @@ This project uses **Simple Feedforward Neural Network** to estimate the paramete
 
 ## Neural Network Layout
 
+<img src="/TestImages/test.jpg" width="500" height="300">
 ![image](/images/NNLayout.jpg)
 
 ## Setup the environment
