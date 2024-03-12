@@ -1,5 +1,4 @@
-# Skew Normal Distribution Parameter Estimator
-
+# Predict Pokemon With Simple Feedforward Neural Network
 This project uses **Simple Feedforward Neural Network** to Predict **Pokemon** with images.
 
 ## Prediction Result
