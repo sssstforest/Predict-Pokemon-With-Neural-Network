@@ -1,11 +1,10 @@
 # Skew Normal Distribution Parameter Estimator
 
-This project uses **Simple Feedforward Neural Network** to estimate the parameters of the **Skew Normal Distribution**.
+This project uses **Simple Feedforward Neural Network** to Predict **Pokemon** with images.
 
-## Neural Network Layout
+## Prediction Result
 
-<img src="/TestImages/test.jpg" width="500" height="300">
-![image](/images/NNLayout.jpg)
+![Prediction Image](/assets/Prediction.png)
 
 ## Setup the environment
 
