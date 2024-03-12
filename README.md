@@ -4,8 +4,9 @@ This project uses **Simple Feedforward Neural Network** to Predict **Pokemon** w
 
 ## Prediction Result
 
-Model Training Accuracy: 0.014  
-Validation Accuracy: 0.008
+Model Training Accuracy: **0.014**  
+Validation Accuracy: **0.008**  
+
 ![Prediction Image](/assets/Prediction.png)
 
 ## Setup the environment
