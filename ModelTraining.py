@@ -17,11 +17,13 @@ X_test_reshaped = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) - 127.
 model = Model()
 
 # Add layers
-model.add(Layer_Dense(X_train_reshaped.shape[1], 128))
+model.add(Layer_Dense(X_train_reshaped.shape[1], 1024))
 model.add(Activation_ReLU())
-model.add(Layer_Dense(128, 128))
+model.add(Layer_Dense(1024, 1024))
 model.add(Activation_ReLU())
-model.add(Layer_Dense(128, 150))
+model.add(Layer_Dense(1024, 1024))
+model.add(Activation_ReLU())
+model.add(Layer_Dense(1024, 150))
 model.add(Activation_Softmax())
 
 # Set loss, optimizer and accuracy objects

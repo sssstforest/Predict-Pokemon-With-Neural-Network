@@ -1215,8 +1215,8 @@ def load_mnist_dataset(path):
             y.append(label)
 
     # Convert the data to proper numpy arrays and return
-    # return np.array(X), np.array(y).astype('uint8')
-    return X, y
+    return np.array(X), np.array(y)
+    # return X, y
 
 
 # MNIST dataset (train + test)
@@ -1235,8 +1235,12 @@ def input_target_split(train_dir,labels):
         folder = os.path.join(train_dir,label)
         for image in os.listdir(folder):
             try:
-                img=load_img(os.path.join(folder,image), target_size=(128,128))
-                img=img_to_array(img)
+                # img=load_img(os.path.join(folder,image), target_size=(128,128))
+                # img=img_to_array(img)
+                # img=img/255.0
+                img = cv2.imread(
+                        os.path.join(folder, image),
+                        cv2.IMREAD_UNCHANGED)
                 img=img/255.0
                 dataset.append((img,count))
             except:
