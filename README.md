@@ -15,40 +15,11 @@ Validation Accuracy: **0.008**
 pip install -r requirements.txt
 ```
 
-## Usage
+## Thoughts & Future
 
-```bash
-from SNParameterEstimator import ParameterEstimator
-
-# Computer the parameters using the function
-mu, sd, alpha = ParameterEstimator(x_values, y_values, epochs=501)
-```
-
-**mu**: Location (Mean)  
-**sd**: Scale (Standard Deviation)  
-**alpha**: Skewness
-
-## Math Work
-
-![image](/images/dMu.jpg)
-![image](/images/dSD.jpg)
-![image](/images/dAlpha.jpg)
-
-## Limitations
-
-1. This model tends to be more precise when
-    1. **mu** is close to **0**.
-    2. **sd** is larger than **1.0**.
-    3. **alpha** is larger than **1.0**.
-
-## Guess of Reasons and Future Work
-
-1. The reason why this model does not work well in all range of values might because 2 hidden layers are not enought for prediction. Thus, increasing the number of layers or using RNN instead might improve the performance.
-2. The hyperparameters, like learning rate and decay, need to be tuned for the better performance.
-3. Cases like when the data is not completed have not been tested for this model.
+1. The prediction is FUNNY :D
+2. The simple feedforward NN might perform bad on complex image classification. I will try CNN or other NN structure in the future to complete this project.
 
 ## References
 
-1. Neural Network structure: https://github.com/Sentdex/NNfSiX
-2. Ideas of splitting the neurons for parameters: https://medium.com/hal24k-techblog/a-guide-to-generating-probability-distributions-with-neural-networks-ffc4efacd6a4
-3. Derivative calculator: https://www.derivative-calculator.net/
+1. Ideas for processing the data: https://www.kaggle.com/code/quadeer15sh/classification-and-pokemon-api-90-f1-score
